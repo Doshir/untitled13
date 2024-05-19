@@ -1,1 +1,1 @@
-![Java CI] (https://github.com/Doshir/untitled13/actions/workflows/ci.yml/badge.svg)
+[![CI Status](https://github.com/Doshir/untitled13/actions/workflows/ci.yml/badge.svg)](https://github.com/Doshir/untitled13/actions/workflows/ci.yml)
