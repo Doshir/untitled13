@@ -21,16 +21,10 @@ jobs:
 
       - name: Notify Telegram on success
         if: success()
-        env:
-          TELEGRAM_BOT_TOKEN: AAEYhBA7v-fgGBHUp7cOxZu_gMBLRsT-Yv0
-          TELEGRAM_CHAT_ID: 7095802882
         run: |
-          curl -X POST "https://api.telegram.org/bot${{ env.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id=${{ env.TELEGRAM_CHAT_ID }}&text=Все ок"
+          curl -X POST "https://api.telegram.org/bot7095802882:AAEYhBA7v-fgGBHUp7cOxZu_gMBLRsT-Yv0/sendMessage" -d "chat_id=97446493&text=Все ок"
 
       - name: Notify Telegram on failure
         if: failure()
-        env:
-          TELEGRAM_BOT_TOKEN: AAEYhBA7v-fgGBHUp7cOxZu_gMBLRsT-Yv0
-          TELEGRAM_CHAT_ID: 7095802882
         run: |
-          curl -X POST "https://api.telegram.org/bot${{ env.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id=${{ env.TELEGRAM_CHAT_ID }}&text=Тесты не пройдены"
+          curl -X POST "https://api.telegram.org/bot7095802882:AAEYhBA7v-fgGBHUp7cOxZu_gMBLRsT-Yv0/sendMessage" -d "chat_id=97446493&text=Тесты не пройдены"
