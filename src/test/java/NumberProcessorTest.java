@@ -1,9 +1,10 @@
 import org.junit.Test;
 
-
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class NumberProcessorTest {
 
@@ -29,6 +30,16 @@ public class NumberProcessorTest {
     public void testMult() {
         int[] numbers = {1, 4, 2, 3};
         assertEquals(24, NumberProcessor._mult(numbers));
+    }
+
+    @Test
+    public void testReadNumbersFromFile() throws IOException {
+        int[] expectedNumbers = {1, 2, 3, 4, 5};
+        String filePath = "src/main/resources/test_numbers.txt";
+        Files.write(Paths.get(filePath), "1 2 3 4 5".getBytes());
+
+        int[] actualNumbers = NumberProcessor.readNumbersFromFile(filePath);
+        assertArrayEquals(expectedNumbers, actualNumbers);
     }
 
     @Test

@@ -33,7 +33,7 @@ public class NumberProcessor {
     }
 
     public static void main(String[] args) throws IOException {
-        String filePath = "src/main/resources/number.txt"; // путь к вашему файлу с числами
+        String filePath = "src/main/resources/number.txt";
         int[] numbers = readNumbersFromFile(filePath);
 
         System.out.println("Минимальное: " + _min(numbers));
