@@ -18,13 +18,3 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn -B clean test
-
-      - name: Notify Telegram on success
-        if: success()
-        run: |
-          curl -X POST "https://api.telegram.org/bot7095802882:AAEYhBA7v-fgGBHUp7cOxZu_gMBLRsT-Yv0/sendMessage" -d "chat_id=97446493&text=Все ок"
-
-      - name: Notify Telegram on failure
-        if: failure()
-        run: |
-          curl -X POST "https://api.telegram.org/bot7095802882:AAEYhBA7v-fgGBHUp7cOxZu_gMBLRsT-Yv0/sendMessage" -d "chat_id=97446493&text=Тесты не пройдены"
